@@ -1,0 +1,47 @@
+﻿<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Iker Garitaonandia</title>
+    <meta name="description" content="This is a simple Node.js and socket.io demo integrated with the Twitter Streaming API deployed in Heroku for learning purposes only.">
+    <script src="http://litnight.herokuapp.com/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript">
+    var _socket = null;
+    $(function() {
+        if(io !== undefined) {
+            // Here you create the connection with the server
+            _socket = io.connect("http://your-app-name.herokuapp.com:80/");
+
+            // This will listen to the "new tweet" signal everytime
+            // there's a new tweet incoming into the stream
+            _socket.on("new tweet", function(tweet) {
+                // handle tweet object
+            });
+
+            // This will listen when the server emits the "connected" signal
+            // informing to the client that the connection has been stablished
+            _socket.on("connected", function(r) {
+                $("head").find("title").html("Tracking now: " + r.tracking);
+                $(".tracking").html(r.tracking);
+
+                // Here the client tells the server to "start stream"
+                emitMsj("start stream");
+            });
+        }
+    });
+    function emitMsj(signal, o) {
+        if(_socket) {
+            _socket.emit(signal, o);
+        }
+        else {
+            alert("Shit! Socket.io didn't start!");
+        }
+    }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
