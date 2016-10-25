@@ -38,10 +38,10 @@ function handler (req, res) {
  * @var users An array of connected users to the application
  */
 var tw = new twitter({
-    consumer_key: "",
-    consumer_secret: "",
-    access_token_key: "",
-    access_token_secret: ""
+    consumer_key: "m6hsOVSkPuycGoKqd0tP8XqYn",
+    consumer_secret: "vZUHgB7SfWBKREIeJpgemFmDP4KRMaxiHbndm1adMkpWxpVx7s",
+    access_token_key: "770030619283914752-3172hGkI3luVYW1fQIinOSqrfsePZfm",
+    access_token_secret: "Moi180dRvjWt2zZ83BQlZBcmcGopBHGfF5MHmFEhRyRXs"
     }),
     stream = null,
     track = "venezuela,simon bolivar",

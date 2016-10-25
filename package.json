@@ -1,11 +1,12 @@
 {
-    "name": "first-demo",
-    "description" : "A Node.js, socket.io demo.",
-    "dependencies": {
-        "socket.io": "0.9.13",
-        "ntwitter": "0.5.0"
-    },
-    "engines" : {
-        "node" : "0.8.11"
-    }
+  "name": "first-demo",
+  "description": "A Node.js, socket.io demo.",
+  "dependencies": {
+    "express": "4.14.0",
+    "ntwitter": "0.5.0",
+    "socket.io": "0.9.11"
+  },
+  "engines": {
+    "node": "4.3.1"
+  }
 }
